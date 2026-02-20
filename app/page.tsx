@@ -57,7 +57,7 @@ const projectsData: Project[] = [
   }
 ]
 
-export default function page() {
+export default function Page() {
   return(
     <div className="min-h-screen bg-slate-100 text-slate-50 font-Helvetica selection:bg-blue-500/30">
       
