@@ -12,10 +12,10 @@ interface Project {
 const projectsData: Project[] = [
   {
     id: 1,
-    title: "Zero Interface Gesture AIR Tic-Tac-Toe"
-    description: "A touchless gaming experience using computer science vison, Built with python libraries, Html, Javascript, CSS to tracks finger movements via webcam to play Tic-Tac-Toe with 95% accuracy on browser."
-    tech: ["Python", "OpenCV", "Html", "CSS", "Javascript"]
-    link: "#https://github.com/pe-gif/AIR-TIC-TAC-TOE"
+    title: "Zero Interface Gesture AIR Tic-Tac-Toe",
+    description: "A touchless gaming experience using computer science vison, Built with python libraries, Html, Javascript, CSS to tracks finger movements via webcam to play Tic-Tac-Toe with 95% accuracy on browser.",
+    tech: ["Python", "OpenCV", "Html", "CSS", "Javascript"],
+    link: "#https://github.com/pe-gif/AIR-TIC-TAC-TOE",
   }
 ]
 
