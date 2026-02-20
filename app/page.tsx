@@ -1,6 +1,6 @@
 "use client"
 import react, { useState } from 'react';
-import {Github, Linkedin, Mail, ExternalLink, Terminal, Code2, Cpu} from 'lucide-react';
+import {Github, Linkedin, Mail, ExternalLink, Terminal, Code2, Cpu, FileText} from 'lucide-react';
 import { DiPython, DiReact } from 'react-icons/di';
 import { SiTypescript, SiNextdotjs, SiOpencv, SiPandas, SiTailwindcss, SiGithub } from 'react-icons/si';
 
@@ -145,9 +145,20 @@ export default function App() {
           </div>
         </section>
 
-        <section id="skills" className="py-20 border-t border-slate-800/50">
+        <section id="resume" className="py-20 border-t border-slate-800/50">
           <h2 className="text-3xl px-25 font-bold text-slate-700 mb-10 flex items-center gap-2">
-            <Cpu className="text-slate-700" /> Technical Arsenal
+            <FileText className="text-slate-700" /> Resume
+          </h2>
+
+          <div className="flex-1 flex justify-center w-full">
+                <object data="blank.pdf" type="application/pdf" width="100%" height="600px"></object>
+            </div>
+
+        </section>
+
+        <section id="skills" className="py-20 bg-slate-700 border-t border-slate-800/50">
+          <h2 className="text-3xl px-25 font-bold text-white mb-10 flex items-center gap-2">
+            <Cpu className="text-blue-300" /> Technical Arsenal
           </h2>
           
           <div className="grid grid-cols-2 px-25 md:grid-cols-4 gap-4">
@@ -159,13 +170,15 @@ export default function App() {
               { name: 'Pandas', Icon: SiPandas, color: 'text-indigo-400' },
               { name: 'Tailwind CSS', Icon: SiTailwindcss, color: 'text-teal-400' },
               { name: 'Git/GitHub', Icon: SiGithub, color: 'text-slate-300' }].map((skill) => (
-              <div key={skill.name} className="flex items-center gap-2 p-4 bg-slate-700 border border-slate-800 rounded-lg">
-                <skill.Icon size={20} className="text-blue-300" />
-                <span className="font-medium text-blue-300">{skill.name}</span>
+              <div key={skill.name} className="flex items-center gap-2 p-4 bg-white border border-slate-800 rounded-lg">
+                <skill.Icon size={20} className="text-slate-700" />
+                <span className="font-medium text-slate-700 font-bold">{skill.name}</span>
               </div>
             ))}
           </div>
         </section>
+
+        
 
       </main>
 
