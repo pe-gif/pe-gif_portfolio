@@ -1,6 +1,8 @@
 "use client"
 import react, { useState } from 'react';
-import {Github, Linkedin, Mail, ExternalLink, Terminal, Code2, Cpu, ChevronRight, Python } from 'lucide-react';
+import {Github, Linkedin, Mail, ExternalLink, Terminal, Code2, Cpu} from 'lucide-react';
+import { DiPython, DiReact } from 'react-icons/di';
+import { SiTypescript, SiNextdotjs, SiOpencv, SiPandas, SiTailwindcss, SiGithub } from 'react-icons/si';
 
 interface Project {
   id: number;
@@ -17,6 +19,41 @@ const projectsData: Project[] = [
     description: "A touchless gaming experience using computer science vison, Built with python libraries, Html, Javascript, CSS to tracks finger movements via webcam to play Tic-Tac-Toe with 95% accuracy on browser.",
     tech: ["Python", "OpenCV", "Html", "CSS", "Javascript"],
     link: "https://github.com/pe-gif/AIR-TIC-TAC-TOE",
+  },
+  {
+    id: 2,
+    title: "AI-Powered Code Review Bot",
+    description: "A GitHub bot that uses OpenAI's GPT-4 to automatically review pull requests, providing feedback on code quality, style, and potential bugs. Built with Python, GitHub API, and OpenAI API.",
+    tech: ["Python", "GitHub API", "OpenAI API"],
+    link: ""
+  },
+  {
+    id: 3,
+    title: "Personal Portfolio Website",
+    description: "A responsive portfolio website built with Next.js and Tailwind CSS, showcasing my projects and skills.",
+    tech: ["Next.js", "Tailwind CSS"],
+    link: ""
+  },
+  {
+    id: 4,
+    title: "Data Visualization Dashboard",
+    description: "A interactive dashboard for visualizing complex datasets using React and D3.js.",
+    tech: ["React", "D3.js"],
+    link: ""
+  },
+  {
+    id: 5,
+    title: "Machine Learning Model Deployment",
+    description: "A streamlined process for deploying machine learning models into production environments, ensuring scalability and performance.",
+    tech: ["Python", "Docker", "Kubernetes"],
+    link: ""
+  },
+  {
+    id: 6,
+    title: "Automated Testing Framework",
+    description: "A comprehensive testing framework that integrates with CI/CD pipelines to automate unit, integration, and end-to-end testing.",
+    tech: ["Python", "Selenium", "Jenkins"],
+    link: ""
   }
 ]
 
@@ -30,22 +67,21 @@ export default function App() {
             <a href="#projects" className="text-sm hover:text-slate-700 transition-colors">Projects</a>
             <a href="#resume" className="text-sm hover:text-slate-700 transition-colors">Resume</a>
             <a href="#skills" className="text-sm hover:text-slate-700 transition-colors">Skills</a>
-            <a href="#contact" className="text-sm hover:text-slate-700 transition-colors">Contact Me</a>
           </div>
         </div>
       </nav>
 
        <main className="w-full mx-auto pt-32 pb-20">
-        <section className="py-20 animate-fade-in-up">
+        <section className="py-20 px-25 animate-fade-in-up">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex-1">
-              <h1 className="md:text-8xl px-25 font-extrabold tracking-tight text-slate-700 mb-6">
+              <h1 className="md:text-8xl font-extrabold tracking-tight text-slate-700 mb-6">
                 Peter Nguyen <br className="hidden md:block"/>
               </h1>
-              <p className="text-lg md:text-xl px-25 py-10 text-slate-400 max-w-5xl leading-relaxed">
+              <p className="text-lg md:text-xl py-10 text-slate-400 max-w-5xl leading-relaxed">
                 I'm Peter, a Software Engineer specializing in Python automation, AI integrations, and modern web development. I turn heavy manual processes into fast, scalable code.
               </p>
-              <div className="px-25 flex flex-col sm:flex-row gap-4 ">
+              <div className=" flex flex-col sm:flex-row gap-4 ">
                 <button
                   className="px-6 py-3 bg-blue-300 hover:bg-slate-700 text-white font-medium rounded-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
                   <Mail size={16} />
@@ -76,7 +112,11 @@ export default function App() {
           <h2 className="text-3xl px-25 font-bold text-white mb-10 flex items-center gap-2">
             <Code2 className="text-blue-300" /> Featured Work
           </h2>
-          
+
+          <p className="text-slate-500 text-sm mb-10 italic px-25">
+            * Note: These projects are currently placeholders while I build out my full portfolio.
+          </p>
+
           <div className="grid px-25 grid-cols-1 md:grid-cols-2 gap-6">
             {projectsData.map((project) => (
               <div key={project.id} className="group bg-slate-100 border border-slate-800 hover:border-blue-300 rounded-xl p-6 transition-all duration-300 hover:-translate-y-1">
@@ -111,10 +151,17 @@ export default function App() {
           </h2>
           
           <div className="grid grid-cols-2 px-25 md:grid-cols-4 gap-4">
-            {['Python', 'TypeScript', 'React', 'Next.js', 'OpenCV', 'Pandas', 'Tailwind CSS', 'Git/GitHub'].map((skill) => (
-              <div key={skill} className="flex items-center gap-2 p-4 bg-slate-900/50 border border-slate-800 rounded-lg">
-                <Python size={16} className="text-blue-300" />
-                <span className="font-medium text-slate-700">{skill}</span>
+            {[{ name: 'Python', Icon: DiPython, color: 'text-blue-400' },
+              { name: 'TypeScript', Icon: SiTypescript, color: 'text-blue-600' },
+              { name: 'React', Icon: DiReact, color: 'text-cyan-400' },
+              { name: 'Next.js', Icon: SiNextdotjs, color: 'text-white' },
+              { name: 'OpenCV', Icon: SiOpencv, color: 'text-green-500' },
+              { name: 'Pandas', Icon: SiPandas, color: 'text-indigo-400' },
+              { name: 'Tailwind CSS', Icon: SiTailwindcss, color: 'text-teal-400' },
+              { name: 'Git/GitHub', Icon: SiGithub, color: 'text-slate-300' }].map((skill) => (
+              <div key={skill.name} className="flex items-center gap-2 p-4 bg-slate-900/50 border border-slate-800 rounded-lg">
+                <skill.Icon size={20} className="text-blue-300" />
+                <span className="font-medium text-slate-700">{skill.name}</span>
               </div>
             ))}
           </div>
