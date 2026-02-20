@@ -96,7 +96,7 @@ export default function App() {
             </div>
 
             <div className="flex-1 flex justify-center w-full">
-              <div className="relative w-64 h-64 md:w-[450px] md:h-[450px] rounded-3xl overflow-hidden border-4 border-slate-200 shadow-xl">
+              <div className="relative w-64 h-64 md:w-[450px] md:h-[450px] rounded-3xl overflow-hidden border-4 border-slate-200">
                 <img 
                   src="/me.jpg" 
                   alt="Peter Nguyen" 
@@ -159,9 +159,9 @@ export default function App() {
               { name: 'Pandas', Icon: SiPandas, color: 'text-indigo-400' },
               { name: 'Tailwind CSS', Icon: SiTailwindcss, color: 'text-teal-400' },
               { name: 'Git/GitHub', Icon: SiGithub, color: 'text-slate-300' }].map((skill) => (
-              <div key={skill.name} className="flex items-center gap-2 p-4 bg-slate-900/50 border border-slate-800 rounded-lg">
+              <div key={skill.name} className="flex items-center gap-2 p-4 bg-slate-700 border border-slate-800 rounded-lg">
                 <skill.Icon size={20} className="text-blue-300" />
-                <span className="font-medium text-slate-700">{skill.name}</span>
+                <span className="font-medium text-blue-300">{skill.name}</span>
               </div>
             ))}
           </div>
