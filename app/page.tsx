@@ -1,4 +1,3 @@
-"use client"
 import react, { useState } from 'react';
 import {Github, Linkedin, Mail, ExternalLink, Terminal, Code2, Cpu, FileText} from 'lucide-react';
 import { DiPython, DiReact } from 'react-icons/di';
