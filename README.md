@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Peter Nguyen — Portfolio
+
+A high-end, dark-themed portfolio built with **Next.js (App Router)**, **TypeScript**, and **Tailwind CSS v4**. Inspired by the Vercel / Linear aesthetic: deep dark backgrounds, crisp typography, minimal borders, and smooth micro-interactions.
+
+## Features
+
+- **Hero** — bold typography with on-load fade-in animations (no avatar).
+- **Technical Arsenal** — interactive skill badges that lift and glow on hover.
+- **Project grid** — four plug-and-play glassmorphism cards with a staggered entrance animation.
+- **Contact form** — wired to a Next.js API route with loading / success / error states.
+- **Email delivery** — `app/api/contact/route.ts` sends mail via [Resend](https://resend.com).
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies and run the dev server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Configuration
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Email (contact form)
 
-## Learn More
+1. Create a [Resend](https://resend.com) account and grab an API key.
+2. Copy `.env.example` to `.env.local` and fill in:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxx
+CONTACT_EMAIL=you@yourdomain.com        # where messages are delivered
+CONTACT_FROM="Peter Nguyen <hello@yourdomain.com>"   # a verified sender (optional)
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+> The route works out of the box with Resend's `onboarding@resend.dev` sandbox sender. To send from your own domain, verify it in Resend and set `CONTACT_FROM`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Personalization
 
-## Deploy on Vercel
+- Update your name, role, email, and links in `app/lib/site.ts`.
+- The GitHub icon points to [`https://github.com/pe-gif`](https://github.com/pe-gif).
+- Drop your résumé PDF at `public/resume.pdf` to wire the **Download Résumé** button.
+- Fill in the four project cards in `app/components/Projects.tsx`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deploy
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deploy to [Vercel](https://vercel.com/new). Add `RESEND_API_KEY` (and optionally `CONTACT_EMAIL` / `CONTACT_FROM`) as environment variables in the project settings.
